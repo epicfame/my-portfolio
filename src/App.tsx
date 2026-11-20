@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header'
 import { SkipLink } from '@/components/layout/SkipLink'
 import { Section } from '@/components/ui/Section'
 import { About } from '@/sections/About'
+import { Experience } from '@/sections/Experience'
 import { Hero } from '@/sections/Hero'
 import { Skills } from '@/sections/Skills'
 
@@ -37,6 +38,8 @@ export function App() {
               <About key={section.id} />
             ) : section.id === 'skills' ? (
               <Skills key={section.id} />
+            ) : section.id === 'experience' ? (
+              <Experience key={section.id} />
             ) : (
               <Section
                 headingLevel={2}

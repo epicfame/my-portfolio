@@ -468,7 +468,7 @@ Build in this order. After **each** section, run `lint` and `typecheck`, then ch
 - [x] Hero (`home`)
 - [x] About (`about`)
 - [x] Skills (`skills`)
-- [ ] Experience (`experience`)
+- [x] Experience (`experience`)
 - [ ] Projects (`projects`)
 - [ ] Education & Certifications (`education`)
 - [ ] Contact (`contact`), with the `mailto:` form and `src/lib/contact.ts`
