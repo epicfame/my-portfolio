@@ -470,8 +470,8 @@ Build in this order. After **each** section, run `lint` and `typecheck`, then ch
 - [x] Skills (`skills`)
 - [x] Experience (`experience`)
 - [x] Projects (`projects`)
-- [ ] Education & Certifications (`education`)
-- [ ] Contact (`contact`), with the `mailto:` form and `src/lib/contact.ts`
+- [x] Education & Certifications (`education`)
+- [x] Contact (`contact`), with the `mailto:` form and `src/lib/contact.ts`
 
 **Gate (per section):** uses only primitives and tokens; no raw values; heading order correct; contrast passes in both themes.
 

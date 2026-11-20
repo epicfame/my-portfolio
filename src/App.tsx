@@ -2,15 +2,26 @@ import { Backdrop } from '@/components/layout/Backdrop'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { SkipLink } from '@/components/layout/SkipLink'
-import { Section } from '@/components/ui/Section'
 import { About } from '@/sections/About'
+import { Contact } from '@/sections/Contact'
+import { Education } from '@/sections/Education'
 import { Experience } from '@/sections/Experience'
 import { Hero } from '@/sections/Hero'
 import { Projects } from '@/sections/Projects'
 import { Skills } from '@/sections/Skills'
 
+const SECTION_COMPONENTS = {
+  home: Hero,
+  about: About,
+  skills: Skills,
+  experience: Experience,
+  projects: Projects,
+  education: Education,
+  contact: Contact,
+}
+
 type SectionNavigationItem = {
-  id: string
+  id: keyof typeof SECTION_COMPONENTS
   label: string
 }
 
@@ -32,27 +43,11 @@ export function App() {
         <Backdrop />
         <Header sections={SECTION_ORDER} />
         <main>
-          {SECTION_ORDER.map((section, index) => (
-            section.id === 'home' ? (
-              <Hero key={section.id} />
-            ) : section.id === 'about' ? (
-              <About key={section.id} />
-            ) : section.id === 'skills' ? (
-              <Skills key={section.id} />
-            ) : section.id === 'experience' ? (
-              <Experience key={section.id} />
-            ) : section.id === 'projects' ? (
-              <Projects key={section.id} />
-            ) : (
-              <Section
-                headingLevel={2}
-                headingId={index === 0 ? 'main-content' : undefined}
-                id={section.id}
-                key={section.id}
-                title={section.label}
-              />
-            )
-          ))}
+          {SECTION_ORDER.map((section) => {
+            const SectionComponent = SECTION_COMPONENTS[section.id]
+
+            return <SectionComponent key={section.id} />
+          })}
         </main>
         <Footer />
       </div>
