@@ -141,7 +141,7 @@ section:focus-visible {
 
 section:focus-visible h1,
 section:focus-visible h2 {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--fg);
   outline-offset: 3px;
 }
 
@@ -171,6 +171,10 @@ section:focus-visible h2 {
       backdrop-filter: blur(8px);
     }
   }
+}
+
+.glass-panel-static {
+  backdrop-filter: none;
 }
 
 @media (prefers-reduced-transparency: reduce) {
@@ -206,7 +210,7 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--fg);
   outline-offset: 3px;
 }
 

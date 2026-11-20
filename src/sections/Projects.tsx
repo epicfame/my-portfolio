@@ -10,7 +10,7 @@ export function Projects() {
       <ul className="grid gap-4 md:grid-cols-2">
         {projects.map((project) => (
           <li className="h-full" key={project.name}>
-            <GlassCard className="h-full p-6 sm:p-8">
+            <GlassCard className="glass-panel-static h-full p-6 sm:p-8">
               <article className="flex h-full flex-col gap-6">
                 <div className="space-y-4">
                   <header className="space-y-2">

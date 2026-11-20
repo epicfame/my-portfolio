@@ -477,13 +477,13 @@ Build in this order. After **each** section, run `lint` and `typecheck`, then ch
 
 ### Phase 6: Polish and quality
 
-- [ ] Accessibility pass: tab order, focus visibility, headings, labels, alt text, contrast in both themes
-- [ ] Performance pass: image sizes and formats, lazy loading, blur budget, font loading, bundle size
-- [ ] SEO pass: all tags from section 11 present, `robots.txt`, absolute `og:image` URL
-- [ ] Responsive pass: no horizontal scroll at 375px; long text and empty states handled
-- [ ] Motion pass: every animation has a purpose and respects `prefers-reduced-motion`
+- [x] Accessibility pass: tab order, focus visibility, headings, labels, alt text, contrast in both themes
+- [x] Performance pass: image sizes and formats, lazy loading, blur budget, font loading, bundle size
+- [x] SEO pass: all tags from section 11 present, `robots.txt`, absolute `og:image` URL
+- [x] Responsive pass: no horizontal scroll at 375px; long text and empty states handled
+- [x] Motion pass: every animation has a purpose and respects `prefers-reduced-motion`
 
-**Gate:** Lighthouse ≥ 90 in all four categories on the production preview.
+**Gate:** Lighthouse ≥ 90 in all four categories on the production preview. Not verified: Lighthouse CLI is unavailable and dependency installation is owner-managed.
 
 ### Phase 7: Final QA and report
 

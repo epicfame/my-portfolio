@@ -49,7 +49,7 @@ export function Nav({ sections }: NavProps) {
         aria-controls="mobile-navigation"
         aria-expanded={isOpen}
         aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        className="size-11 px-0 focus:outline-2 focus:outline-primary focus:outline-offset-2 lg:hidden"
+        className="size-11 px-0 focus-visible:outline-2 focus-visible:outline-fg focus-visible:outline-offset-2 lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={handleMenuKeyDown}
         ref={menuButtonRef}
@@ -88,7 +88,7 @@ export function Nav({ sections }: NavProps) {
 
       <ul
         className={cn(
-          'absolute left-4 right-4 top-full z-30 mt-3 flex flex-col gap-1 rounded-md border border-glass-border bg-glass-fallback p-3 shadow-lg backdrop-blur-sm lg:hidden',
+          'absolute left-4 right-4 top-full z-30 mt-3 flex flex-col gap-1 rounded-md border border-glass-border bg-glass-fallback p-3 shadow-lg lg:hidden',
           !isOpen && 'hidden',
         )}
         id="mobile-navigation"
@@ -99,7 +99,15 @@ export function Nav({ sections }: NavProps) {
             <TextLink
               className="inline-flex min-h-11 w-full items-center rounded-md px-3 py-2 text-body-sm no-underline hover:bg-accent-tint"
               href={`#${section.id}`}
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                if (isOpen) {
+                  document.getElementById(section.id)?.focus({
+                    preventScroll: true,
+                  })
+                }
+
+                setIsOpen(false)
+              }}
             >
               {section.label}
             </TextLink>

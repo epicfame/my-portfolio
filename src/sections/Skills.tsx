@@ -12,7 +12,7 @@ export function Skills() {
 
           return (
             <GlassCard
-              className="flex h-full min-h-48 flex-col gap-4 p-6"
+              className="glass-panel-static flex h-full min-h-48 flex-col gap-4 p-6"
               key={group.category}
             >
               <h3

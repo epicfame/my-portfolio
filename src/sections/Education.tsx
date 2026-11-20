@@ -6,7 +6,7 @@ export function Education() {
   return (
     <Section id="education" title="Education & Certifications">
       <div className="grid gap-4 md:grid-cols-2">
-        <GlassCard className="space-y-6 p-6 sm:p-8">
+        <GlassCard className="glass-panel-static space-y-6 p-6 sm:p-8">
           <h3 className="text-h3 font-semibold text-fg">Education</h3>
           <ol className="space-y-6">
             {educationData.entries.map((entry) => (
@@ -29,7 +29,7 @@ export function Education() {
             ))}
           </ol>
         </GlassCard>
-        <GlassCard className="space-y-6 p-6 sm:p-8">
+        <GlassCard className="glass-panel-static space-y-6 p-6 sm:p-8">
           <h3 className="text-h3 font-semibold text-fg">Certifications</h3>
           <ul className="space-y-6">
             {educationData.certifications.map((certification) => (
@@ -49,7 +49,7 @@ export function Education() {
             ))}
           </ul>
         </GlassCard>
-        <GlassCard className="space-y-6 p-6 sm:p-8 md:col-span-2">
+        <GlassCard className="glass-panel-static space-y-6 p-6 sm:p-8 md:col-span-2">
           <h3 className="text-h3 font-semibold text-fg">Languages</h3>
           <dl className="grid gap-4 sm:grid-cols-2">
             {educationData.languages.map((language) => (

@@ -12,6 +12,7 @@ export function Hero() {
       aria-labelledby="home-heading"
       className="scroll-mt-24 py-16 sm:py-20"
       id="home"
+      tabIndex={-1}
     >
       <Container>
         <div className="grid items-center gap-10 md:grid-cols-2">

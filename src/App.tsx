@@ -42,7 +42,7 @@ export function App() {
       <div className="app-shell">
         <Backdrop />
         <Header sections={SECTION_ORDER} />
-        <main>
+        <main id="main-content" tabIndex={-1}>
           {SECTION_ORDER.map((section) => {
             const SectionComponent = SECTION_COMPONENTS[section.id]
 
