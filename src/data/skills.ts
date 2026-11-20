@@ -19,10 +19,10 @@ export const skillGroups = [
   },
   {
     category: 'Database',
-    skills: ['MySQL', 'PostgreSQL', 'Supabase'],
+    skills: ['MySQL', 'PostgreSQL'],
   },
   {
     category: 'Tools',
-    skills: ['Git', 'Vercel'],
+    skills: ['Git', 'Vercel', 'Supabase'],
   },
 ] as const satisfies readonly SkillGroup[]
