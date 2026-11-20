@@ -6,6 +6,7 @@ import { Section } from '@/components/ui/Section'
 import { About } from '@/sections/About'
 import { Experience } from '@/sections/Experience'
 import { Hero } from '@/sections/Hero'
+import { Projects } from '@/sections/Projects'
 import { Skills } from '@/sections/Skills'
 
 type SectionNavigationItem = {
@@ -40,6 +41,8 @@ export function App() {
               <Skills key={section.id} />
             ) : section.id === 'experience' ? (
               <Experience key={section.id} />
+            ) : section.id === 'projects' ? (
+              <Projects key={section.id} />
             ) : (
               <Section
                 headingLevel={2}
