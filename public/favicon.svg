@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Giovanni Jose Ricardo">
+  <title>Giovanni Jose Ricardo</title>
+  <defs>
+    <linearGradient id="bg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b86ff" />
+      <stop offset="1" stop-color="#1856ff" />
+    </linearGradient>
+    <linearGradient id="glass" x1="32" y1="2" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#bg)" />
+  <rect width="64" height="36" rx="12" fill="url(#glass)" />
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="11.25" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5" />
+  <path d="M43 22.6 A15 15 0 1 0 47 32 H33" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
