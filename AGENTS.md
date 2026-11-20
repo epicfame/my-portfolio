@@ -456,8 +456,8 @@ Build from the foundations up so every section inherits the same tokens, states,
 
 ### Phase 4: Types and data
 
-- [ ] Types in `src/types/`
-- [ ] Data files in `src/data/` filled strictly from `README.md` (profile, skills, experience, projects, education)
+- [x] Types in `src/types/`
+- [x] Data files in `src/data/` filled strictly from `README.md` (profile, skills, experience, projects, education)
 
 **Gate:** `typecheck` passes; every fact traces back to `README.md`; nothing invented.
 
