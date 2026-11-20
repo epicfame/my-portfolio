@@ -1,4 +1,4 @@
-export type ExperiencePosition = {
+type ExperiencePosition = {
   id: string
   title: string
   period: string

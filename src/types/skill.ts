@@ -1,4 +1,4 @@
-export type SkillCategory = 'Frontend' | 'Backend' | 'Database' | 'Tools'
+type SkillCategory = 'Frontend' | 'Backend' | 'Database' | 'Tools'
 
 export type SkillGroup = {
   category: SkillCategory

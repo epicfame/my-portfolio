@@ -1,9 +1,9 @@
-export type ProfileMetric = {
+type ProfileMetric = {
   value: string
   label: string
 }
 
-export type ProfileLink = {
+type ProfileLink = {
   label: string
   href: string
   external?: boolean

@@ -487,8 +487,12 @@ Build in this order. After **each** section, run `lint` and `typecheck`, then ch
 
 ### Phase 7: Final QA and report
 
-- [ ] `npm run lint` (0 errors, 0 warnings), `npm run typecheck`, `npm run build`
-- [ ] Consistency audit: no raw hex, font names, or magic pixel values outside `src/index.css`; no radii other than `sm` and `md`; no `info` color
-- [ ] No `console.log`, commented-out code, unused files, or unused exports
-- [ ] Compare the result against `DESIGN.md` line by line and note any deviation
-- [ ] Final report: what was built, commands run with results, missing packages or assets for the owner, and open questions
+- [x] `npm run lint` (0 errors, 0 warnings), `npm run typecheck`, `npm run build`
+- [x] Consistency audit: no raw hex, font names, or magic pixel values outside `src/index.css`, except required theme metadata and favicon SVG colors; CSS radii use only `sm` and `md`; no `info` color
+- [x] No `console.log`, commented-out code, unused source/public files, or unreferenced exports (except the repository-required `SITE_URL` deployment constant)
+- [x] Compare the result against `DESIGN.md` line by line and note any deviation
+- [x] Final report: what was built, commands run with results, missing packages or assets for the owner, and open questions
+
+**Design comparison:** Palette, typography, type scale, CSS radii, glass layers, themes, contrast, blur budget, and reduced-motion behavior align with `DESIGN.md`. Compact controls and link groups use Tailwind's 4px spacing substeps alongside the overall 8px layout rhythm. The standalone favicon and required `theme-color` metadata use literal palette values because they cannot consume CSS tokens.
+
+**Final QA note:** No additional missing assets or dependencies were found. The Lighthouse ≥ 90 gate from Phase 6 remains unverified because Lighthouse CLI is not installed and dependency installation is owner-managed.

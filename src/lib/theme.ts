@@ -1,8 +1,8 @@
-export type Theme = 'light' | 'dark'
+type Theme = 'light' | 'dark'
 
 const THEME_STORAGE_KEY = 'theme'
 
-export function getStoredTheme(): Theme | null {
+function getStoredTheme(): Theme | null {
   try {
     const theme = window.localStorage.getItem(THEME_STORAGE_KEY)
     return theme === 'light' || theme === 'dark' ? theme : null
@@ -11,7 +11,7 @@ export function getStoredTheme(): Theme | null {
   }
 }
 
-export function getSystemTheme(): Theme {
+function getSystemTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
@@ -19,7 +19,7 @@ export function getInitialTheme(): Theme {
   return getStoredTheme() ?? getSystemTheme()
 }
 
-export function applyTheme(theme: Theme) {
+function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark')
   document.documentElement.style.colorScheme = theme
 

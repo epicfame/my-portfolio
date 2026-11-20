@@ -1,17 +1,17 @@
-export type EducationEntry = {
+type EducationEntry = {
   institution: string
   program: string
   period: string
   detail?: string
 }
 
-export type Certification = {
+type Certification = {
   name: string
   issuer: string
   year: string
 }
 
-export type Language = {
+type Language = {
   name: string
   proficiency: string
 }
