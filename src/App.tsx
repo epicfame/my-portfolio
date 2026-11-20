@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { SkipLink } from '@/components/layout/SkipLink'
 import { Section } from '@/components/ui/Section'
+import { Hero } from '@/sections/Hero'
 
 type SectionNavigationItem = {
   id: string
@@ -28,13 +29,17 @@ export function App() {
         <Header sections={SECTION_ORDER} />
         <main>
           {SECTION_ORDER.map((section, index) => (
-            <Section
-              headingLevel={index === 0 ? 1 : 2}
-              headingId={index === 0 ? 'main-content' : undefined}
-              id={section.id}
-              key={section.id}
-              title={section.label}
-            />
+            section.id === 'home' ? (
+              <Hero key={section.id} />
+            ) : (
+              <Section
+                headingLevel={2}
+                headingId={index === 0 ? 'main-content' : undefined}
+                id={section.id}
+                key={section.id}
+                title={section.label}
+              />
+            )
           ))}
         </main>
         <Footer />

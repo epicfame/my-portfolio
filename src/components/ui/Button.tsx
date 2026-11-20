@@ -1,19 +1,15 @@
 import type { ButtonHTMLAttributes, Ref } from 'react'
 import { cn } from '@/lib/cn'
-
-type ButtonVariant = 'primary' | 'secondary' | 'ghost'
+import {
+  BUTTON_BASE_CLASSES,
+  BUTTON_VARIANT_CLASSES,
+  type ButtonVariant,
+} from '@/lib/button-variants'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean
   ref?: Ref<HTMLButtonElement>
   variant?: ButtonVariant
-}
-
-const VARIANT_CLASSES: Record<ButtonVariant, string> = {
-  primary: 'bg-primary text-neutral shadow-sm hover:shadow-md active:shadow-inner',
-  secondary:
-    'border border-glass-border bg-glass text-fg hover:bg-accent-tint active:bg-accent-tint/80',
-  ghost: 'text-fg hover:bg-accent-tint active:bg-accent-tint/80',
 }
 
 export function Button({
@@ -29,8 +25,8 @@ export function Button({
   return (
     <button
       className={cn(
-        'inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 py-2 text-body-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50',
-        VARIANT_CLASSES[variant],
+        BUTTON_BASE_CLASSES,
+        BUTTON_VARIANT_CLASSES[variant],
         className,
       )}
       disabled={disabled || isLoading}
