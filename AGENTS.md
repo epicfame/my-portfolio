@@ -420,20 +420,20 @@ Build from the foundations up so every section inherits the same tokens, states,
 
 ### Phase 0: Read and baseline
 
-- [ ] Read `AGENTS.md`, `DESIGN.md`, `SKILL.md`, and `README.md` in full
-- [ ] Confirm what is installed in `package.json` (Tailwind plugin, fonts, helpers) and list anything missing for the owner
-- [ ] Run `npm run lint`, `npm run typecheck`, `npm run build` to record the starting state
+- [x] Read `AGENTS.md`, `DESIGN.md`, `SKILL.md`, and `README.md` in full
+- [x] Confirm what is installed in `package.json` (Tailwind plugin, fonts, helpers) and list anything missing for the owner
+- [x] Run `npm run lint`, `npm run typecheck`, `npm run build` to record the starting state
 
 **Gate:** baseline recorded; missing packages listed, not installed.
 
 ### Phase 1: Foundation and tokens
 
-- [ ] `vite.config.ts`: React and Tailwind plugins, `@/` alias (with matching `tsconfig` paths)
-- [ ] `src/index.css`: `@import "tailwindcss"`, dark `@custom-variant`, `@theme` tokens from section 8.3 (colors, fonts, radius, type scale, spacing rhythm)
-- [ ] Semantic variables for light and dark (background, foreground, muted, glass fill, glass border, shadow) and their `@theme inline` mapping
-- [ ] Base styles: body background and text, `focus-visible` ring, selection color, `prefers-reduced-motion`
-- [ ] `index.html`: `lang`, title, description, canonical, Open Graph and Twitter tags, favicon, theme-color, and the inline theme-init script
-- [ ] `src/lib/constants.ts` (`SITE_URL`, `CV_URL`, contact email, social links), `cn`, and theme helper
+- [x] `vite.config.ts`: React and Tailwind plugins, `@/` alias (with matching `tsconfig` paths)
+- [x] `src/index.css`: `@import "tailwindcss"`, dark `@custom-variant`, `@theme` tokens from section 8.3 (colors, fonts, radius, type scale, spacing rhythm)
+- [x] Semantic variables for light and dark (background, foreground, muted, glass fill, glass border, shadow) and their `@theme inline` mapping
+- [x] Base styles: body background and text, `focus-visible` ring, selection color, `prefers-reduced-motion`
+- [x] `index.html`: `lang`, title, description, canonical, Open Graph and Twitter tags, favicon, theme-color, and the inline theme-init script
+- [x] `src/lib/constants.ts` (`SITE_URL`, `CV_URL`, contact email, social links), `cn`, and theme helper
 
 **Gate:** `lint`, `typecheck`, `build` pass. Grep confirms raw hex values exist **only** in `src/index.css`. Light and dark both render a correct empty page with no theme flash.
 
