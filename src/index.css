@@ -50,6 +50,7 @@
   --fg: #141414;
   --muted-fg: rgba(20, 20, 20, 0.72);
   --glass-fill: rgba(255, 255, 255, 0.68);
+  --glass-fallback: #ffffff;
   --glass-border: rgba(255, 255, 255, 0.72);
   --glass-hairline: rgba(20, 20, 20, 0.12);
   --glass-shadow: rgba(20, 20, 20, 0.12);
@@ -63,6 +64,7 @@
   --fg: #ffffff;
   --muted-fg: rgba(255, 255, 255, 0.75);
   --glass-fill: rgba(255, 255, 255, 0.10);
+  --glass-fallback: #141414;
   --glass-border: rgba(255, 255, 255, 0.28);
   --glass-hairline: rgba(255, 255, 255, 0.10);
   --glass-shadow: rgba(0, 0, 0, 0.28);
@@ -74,10 +76,43 @@
   --color-fg: var(--fg);
   --color-muted-fg: var(--muted-fg);
   --color-glass: var(--glass-fill);
+  --color-glass-fallback: var(--glass-fallback);
   --color-glass-border: var(--glass-border);
   --color-glass-hairline: var(--glass-hairline);
   --color-glass-shadow: var(--glass-shadow);
   --color-accent-tint: var(--accent-tint);
+}
+
+.glass-panel {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background-color: var(--glass-fallback);
+  box-shadow:
+    inset 0 1px 0 var(--glass-border),
+    inset 0 0 0 1px var(--glass-hairline),
+    0 8px 24px var(--glass-shadow);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .glass-panel {
+    background-color: var(--glass-fill);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 768px) {
+  @supports (backdrop-filter: blur(1px)) {
+    .glass-panel {
+      backdrop-filter: blur(8px);
+    }
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel {
+    background-color: var(--glass-fallback);
+    backdrop-filter: none;
+  }
 }
 
 html {

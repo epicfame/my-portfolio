@@ -439,10 +439,10 @@ Build from the foundations up so every section inherits the same tokens, states,
 
 ### Phase 2: Primitives (`components/ui`)
 
-- [ ] `GlassCard` (bento-ready, radius `md`) with fallbacks from section 8.5
-- [ ] `Button` (primary, secondary, ghost) with all required states, including loading and disabled
-- [ ] `Chip`, link styles, `Section` wrapper (anchor `id`, heading, `scroll-mt-*`), `Container`
-- [ ] `ThemeToggle` wired to the theme helper, accessible name, visible focus
+- [x] `GlassCard` (bento-ready, radius `md`) with fallbacks from section 8.5
+- [x] `Button` (primary, secondary, ghost) with all required states, including loading and disabled
+- [x] `Chip`, link styles, `Section` wrapper (anchor `id`, heading, `scroll-mt-*`), `Container`
+- [x] `ThemeToggle` wired to the theme helper, accessible name, visible focus
 
 **Gate:** a temporary preview of every primitive in every state, in both themes, passes contrast and keyboard checks. Remove the preview afterwards.
 
