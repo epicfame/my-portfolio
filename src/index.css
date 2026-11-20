@@ -1,1 +1,131 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus-jakarta-sans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./assets/fonts/jet-brains-mono.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1856ff;
+  --color-secondary: #3a344e;
+  --color-success: #07ca6b;
+  --color-warning: #e89558;
+  --color-danger: #ea2143;
+  --color-surface: #ffffff;
+  --color-text: #141414;
+  --color-neutral: #ffffff;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --text-h1: 3rem;
+  --text-h2: 2rem;
+  --text-h3: 1.25rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.75rem;
+}
+
+:root {
+  color-scheme: light;
+  --theme-color: #ffffff;
+  --bg: #ffffff;
+  --fg: #141414;
+  --muted-fg: rgba(20, 20, 20, 0.72);
+  --glass-fill: rgba(255, 255, 255, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.72);
+  --glass-hairline: rgba(20, 20, 20, 0.12);
+  --glass-shadow: rgba(20, 20, 20, 0.12);
+  --accent-tint: rgba(24, 86, 255, 0.12);
+}
+
+:root.dark {
+  color-scheme: dark;
+  --theme-color: #141414;
+  --bg: #141414;
+  --fg: #ffffff;
+  --muted-fg: rgba(255, 255, 255, 0.75);
+  --glass-fill: rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.28);
+  --glass-hairline: rgba(255, 255, 255, 0.10);
+  --glass-shadow: rgba(0, 0, 0, 0.28);
+  --accent-tint: rgba(24, 86, 255, 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted-fg: var(--muted-fg);
+  --color-glass: var(--glass-fill);
+  --color-glass-border: var(--glass-border);
+  --color-glass-hairline: var(--glass-hairline);
+  --color-glass-shadow: var(--glass-shadow);
+  --color-accent-tint: var(--accent-tint);
+}
+
+html {
+  min-width: 320px;
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent-tint);
+  color: var(--fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

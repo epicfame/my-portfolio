@@ -1,9 +1,3 @@
-function App() {
-
-  return (
-    <>
-    </>
-  )
+export function App() {
+  return <main id="main-content" aria-label="Portfolio" />;
 }
-
-export default App

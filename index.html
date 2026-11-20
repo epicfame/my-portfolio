@@ -4,7 +4,46 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Software Engineer and Application Developer building full-stack business applications, REST APIs, databases, and responsive web interfaces." />
+    <link rel="canonical" href="https://giovannijose.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Giovanni Jose Ricardo | Software Engineer" />
+    <meta property="og:description" content="Full-stack software engineer building from databases and REST APIs to responsive web interfaces." />
+    <meta property="og:url" content="https://giovannijose.vercel.app/" />
+    <meta property="og:image" content="https://giovannijose.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Giovanni Jose Ricardo portfolio preview" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Giovanni Jose Ricardo | Software Engineer" />
+    <meta name="twitter:description" content="Full-stack software engineer building from databases and REST APIs to responsive web interfaces." />
+    <meta name="twitter:image" content="https://giovannijose.vercel.app/og-image.png" />
+
+    <title>Giovanni Jose Ricardo | Software Engineer</title>
+
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const theme = savedTheme === 'light' || savedTheme === 'dark'
+            ? savedTheme
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+          document.documentElement.style.colorScheme = theme;
+          const themeColor = document.querySelector('meta[name="theme-color"]');
+          if (themeColor) {
+            themeColor.setAttribute('content', theme === 'dark' ? '#141414' : '#ffffff');
+          }
+        } catch {
+          document.documentElement.style.colorScheme = 'light';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

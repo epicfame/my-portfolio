@@ -98,6 +98,9 @@ Run these yourself and report the real result. Never claim "lint passes" without
 │   ├── assets/
 │   │   └── images/
 │   │       └── profile-picture.webp   # Imported by code; other images go here too
+│   │   └── fonts/
+│   │       └── jet-brains-mono.woff2   # Jet Brains Mono font; 
+│   │       └── plus-jakarta-sans.woff2   # Plus Jakarta Sans font; 
 │   ├── components/
 │   │   ├── ui/             # Primitives (Button, GlassCard, Chip, Section, ThemeToggle, ...)
 │   │   └── layout/         # Backdrop, Header, Footer, Nav, Container, SkipLink
