@@ -466,7 +466,7 @@ Build from the foundations up so every section inherits the same tokens, states,
 Build in this order. After **each** section, run `lint` and `typecheck`, then check 375 / 768 / 1280px in both themes.
 
 - [x] Hero (`home`)
-- [ ] About (`about`)
+- [x] About (`about`)
 - [ ] Skills (`skills`)
 - [ ] Experience (`experience`)
 - [ ] Projects (`projects`)
