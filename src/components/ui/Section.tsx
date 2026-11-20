@@ -3,8 +3,10 @@ import { cn } from '@/lib/cn'
 import { Container } from './Container'
 
 type SectionProps = Omit<HTMLAttributes<HTMLElement>, 'title'> & {
-  children: ReactNode
+  children?: ReactNode
   eyebrow?: string
+  headingLevel?: 1 | 2
+  headingId?: string
   id: string
   title: string
 }
@@ -13,17 +15,22 @@ export function Section({
   children,
   className,
   eyebrow,
+  headingLevel = 2,
+  headingId: providedHeadingId,
   id,
   title,
+  tabIndex = -1,
   ...props
 }: SectionProps) {
-  const headingId = `${id}-heading`
+  const headingId = providedHeadingId ?? `${id}-heading`
+  const HeadingTag = headingLevel === 1 ? 'h1' : 'h2'
 
   return (
     <section
       aria-labelledby={headingId}
       className={cn('scroll-mt-24 py-16 sm:py-20', className)}
       id={id}
+      tabIndex={tabIndex}
       {...props}
     >
       <Container>
@@ -33,9 +40,16 @@ export function Section({
               {eyebrow}
             </p>
           )}
-          <h2 className="text-h2 font-bold text-fg" id={headingId}>
+          <HeadingTag
+            className={cn(
+              'font-bold text-fg',
+              headingLevel === 1 ? 'text-3xl sm:text-h1' : 'text-h2',
+            )}
+            id={headingId}
+            tabIndex={-1}
+          >
             {title}
-          </h2>
+          </HeadingTag>
         </header>
         {children}
       </Container>

@@ -55,6 +55,9 @@
   --glass-hairline: rgba(20, 20, 20, 0.12);
   --glass-shadow: rgba(20, 20, 20, 0.12);
   --accent-tint: rgba(24, 86, 255, 0.12);
+  --backdrop-primary-glow: rgba(24, 86, 255, 0.12);
+  --backdrop-secondary-glow: rgba(58, 52, 78, 0.05);
+  --backdrop-star-color: rgba(255, 255, 255, 0.72);
 }
 
 :root.dark {
@@ -69,6 +72,8 @@
   --glass-hairline: rgba(255, 255, 255, 0.10);
   --glass-shadow: rgba(0, 0, 0, 0.28);
   --accent-tint: rgba(24, 86, 255, 0.18);
+  --backdrop-primary-glow: rgba(24, 86, 255, 0.22);
+  --backdrop-secondary-glow: rgba(58, 52, 78, 0.42);
 }
 
 @theme inline {
@@ -91,6 +96,66 @@
     inset 0 1px 0 var(--glass-border),
     inset 0 0 0 1px var(--glass-hairline),
     0 8px 24px var(--glass-shadow);
+}
+
+.app-shell {
+  isolation: isolate;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app-backdrop {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+.app-backdrop::before {
+  background-image:
+    radial-gradient(ellipse at 12% 8%, var(--backdrop-primary-glow), transparent 42%),
+    radial-gradient(ellipse at 88% 82%, var(--backdrop-secondary-glow), transparent 48%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.backdrop-stars {
+  background-image:
+    radial-gradient(circle at 16% 18%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 69% 34%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 82%, var(--backdrop-star-color) 0 1px, transparent 1.5px);
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.dark .backdrop-stars {
+  opacity: 0.36;
+}
+
+section:focus-visible {
+  outline: none;
+}
+
+section:focus-visible h1,
+section:focus-visible h2 {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .backdrop-stars {
+    background-image:
+      radial-gradient(circle at 16% 18%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 69% 34%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 38% 82%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 82% 16%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 54% 60%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 8% 68%, var(--backdrop-star-color) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 92% 78%, var(--backdrop-star-color) 0 1px, transparent 1.5px);
+  }
 }
 
 @supports (backdrop-filter: blur(1px)) {

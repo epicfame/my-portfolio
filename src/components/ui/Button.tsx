@@ -1,10 +1,11 @@
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes, Ref } from 'react'
 import { cn } from '@/lib/cn'
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean
+  ref?: Ref<HTMLButtonElement>
   variant?: ButtonVariant
 }
 
@@ -20,6 +21,7 @@ export function Button({
   className,
   disabled,
   isLoading = false,
+  ref,
   type = 'button',
   variant = 'primary',
   ...props
@@ -32,6 +34,7 @@ export function Button({
         className,
       )}
       disabled={disabled || isLoading}
+      ref={ref}
       type={type}
       aria-busy={isLoading || undefined}
       {...props}
