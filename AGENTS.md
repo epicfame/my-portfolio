@@ -448,9 +448,9 @@ Build from the foundations up so every section inherits the same tokens, states,
 
 ### Phase 3: Layout shell (`components/layout`)
 
-- [ ] `Backdrop` (gradient in both themes, starfield in dark only, decorative rules from section 8.5)
-- [ ] `SkipLink`, `Header` / `Nav` (desktop and mobile, `aria-expanded` / `aria-controls`), `Footer`
-- [ ] `App.tsx` with the section order array
+- [x] `Backdrop` (gradient in both themes, starfield in dark only, decorative rules from section 8.5)
+- [x] `SkipLink`, `Header` / `Nav` (desktop and mobile, `aria-expanded` / `aria-controls`), `Footer`
+- [x] `App.tsx` with the section order array
 
 **Gate:** keyboard-only navigation works end to end; the shell looks correct at 375, 768, and 1280px in both themes; no more than 3-4 blurred layers visible.
 
