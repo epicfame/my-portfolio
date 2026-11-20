@@ -467,7 +467,7 @@ Build in this order. After **each** section, run `lint` and `typecheck`, then ch
 
 - [x] Hero (`home`)
 - [x] About (`about`)
-- [ ] Skills (`skills`)
+- [x] Skills (`skills`)
 - [ ] Experience (`experience`)
 - [ ] Projects (`projects`)
 - [ ] Education & Certifications (`education`)

@@ -5,6 +5,7 @@ import { SkipLink } from '@/components/layout/SkipLink'
 import { Section } from '@/components/ui/Section'
 import { About } from '@/sections/About'
 import { Hero } from '@/sections/Hero'
+import { Skills } from '@/sections/Skills'
 
 type SectionNavigationItem = {
   id: string
@@ -34,6 +35,8 @@ export function App() {
               <Hero key={section.id} />
             ) : section.id === 'about' ? (
               <About key={section.id} />
+            ) : section.id === 'skills' ? (
+              <Skills key={section.id} />
             ) : (
               <Section
                 headingLevel={2}
